@@ -1,31 +1,41 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  ExternalLink,
+} from "lucide-react";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      alert("Thank you for your message! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -33,56 +43,61 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      label: 'Email',
-      value: 'maaravj16@gmail.com',
-      href: 'mailto:maaravj16@gmail.com'
+      label: "Email",
+      value: "maaravj16@gmail.com",
+      href: "mailto:maaravj16@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: 'Phone',
-      value: '+91 7904884071',
-      href: 'tel:+917904884071'
+      label: "Phone",
+      value: "+91 7904884071",
+      href: "tel:+917904884071",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: 'Location',
-      value: 'Chennai, India',
-      href: '#'
-    }
+      label: "Location",
+      value: "Chennai, India",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
     {
       icon: <Github className="w-6 h-6" />,
-      label: 'GitHub',
-      href: 'https://github.com/Maaran-16'
+      label: "GitHub",
+      href: "https://github.com/Maaran-16",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/maara07/'
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/maara07/",
     },
     {
       icon: <ExternalLink className="w-6 h-6" />,
-      label: 'Portfolio',
-      href: 'https://maara-portfolioo.vercel.app/home'
-    }
+      label: "Resume",
+      href: "/assets/doc/Maaran_Resume.pdf",
+    },
   ];
 
   return (
-    <section id="contact" className="section bg-gradient-to-b from-blue-900/10 to-purple-900/20">
+    <section
+      id="contact"
+      className="section bg-gradient-to-b from-blue-900/10 to-purple-900/20"
+    >
       <div className="container">
         <h2 className="section-title animate-fadeInUp">Get In Touch</h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="animate-fadeInLeft">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-4 gradient-text">Let's Work Together</h3>
+              <h3 className="text-3xl font-bold mb-4 gradient-text">
+                Let's Work Together
+              </h3>
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a question, want to collaborate, or just want to say hi, 
-                I'd love to hear from you!
+                I'm always interested in new opportunities and exciting
+                projects. Whether you have a question, want to collaborate, or
+                just want to say hi, I'd love to hear from you!
               </p>
             </div>
 
@@ -133,11 +148,16 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="animate-fadeInRight">
             <form onSubmit={handleSubmit} className="card">
-              <h3 className="text-2xl font-bold mb-6 gradient-text">Send Message</h3>
-              
+              <h3 className="text-2xl font-bold mb-6 gradient-text">
+                Send Message
+              </h3>
+
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Name *
                   </label>
                   <input
@@ -152,7 +172,10 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -169,7 +192,10 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Subject *
                 </label>
                 <input
@@ -185,7 +211,10 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
@@ -224,7 +253,8 @@ const Contact: React.FC = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
           <p className="text-gray-400">
-            © 2024 Murasoli Maaran. Built with React, TypeScript, and Tailwind CSS.
+            @ {new Date().getFullYear()} Maaran. Built with React,
+            TypeScript, and Tailwind CSS.
           </p>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold gradient-text">
+            <a href="/" className="text-2xl font-bold gradient-text">
               Murasoli Maaran
             </a>
           </div>

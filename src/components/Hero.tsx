@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
               <Mail size={24} />
             </a>
             <a
-              href="https://maara-portfolioo.vercel.app/home"
+              href="/assets/doc/Maaran_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
